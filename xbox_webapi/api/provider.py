@@ -1,8 +1,9 @@
-import requests
 import logging
 
+import requests
+
+from xbox_webapi.api.eds.eds import EDSProvider
 from xbox_webapi.api.language import XboxLiveLanguage
-from xbox_webapi.api.endpoints.eds import EDSProvider
 
 log = logging.getLogger('xbox.api')
 
