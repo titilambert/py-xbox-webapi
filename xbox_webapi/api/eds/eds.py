@@ -112,14 +112,14 @@ class EDSProvider(object):
         params.update(kwargs)
         return self.client.session.get(url, params=params, headers=self.HEADERS_EDS)
 
-    def get_singlemediagroup_search(self, search_query, max_items, desired, **kwargs):
-        if isinstance(desired, list):
-            desired = self.SEPERATOR.join(desired)
+    def get_singlemediagroup_search(self, search_query, max_items, media_item_types, **kwargs):
+        if isinstance(media_item_types, list):
+            media_item_types = self.SEPERATOR.join(media_item_types)
         url = self.EDS_URL + "/media/%s/singleMediaGroupSearch?" % self.client.lang.locale
         params = {
             "q": search_query,
             "maxItems": max_items,
-            "desiredMediaItemTypes": desired
+            "desiredMediaItemTypes": media_item_types
         }
         params.update(kwargs)
         return self.client.session.get(url, params=params, headers=self.HEADERS_EDS)

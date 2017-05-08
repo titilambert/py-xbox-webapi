@@ -3,6 +3,8 @@ import logging
 import requests
 
 from xbox_webapi.api.eds.eds import EDSProvider
+from xbox_webapi.api.lists.lists import ListsProvider
+from xbox_webapi.api.gamerpics.gamerpics import GamerpicsProvider
 from xbox_webapi.api.language import XboxLiveLanguage
 
 log = logging.getLogger('xbox.api')
@@ -33,6 +35,8 @@ class XboxLiveClient(object):
 
         self.lang = language
         self.eds = EDSProvider(self)
+        self.lists = ListsProvider(self)
+        self.gamerpics = GamerpicsProvider(self)
 
     @property
     def session(self):
