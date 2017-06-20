@@ -4,6 +4,16 @@ Xbox-WebAPI is a python library to authenticate with Xbox Live via your Microsof
 
 Authentication via credentials or tokens is supported, Two-Factor-Authentication is also possible.
 
+# Dependencies
+* Python >= 3.4
+* Libraries: requests, python-dateutil, demjson, six
+
+# Installation
+To install this library, execute the following via cmdline
+```sh
+python setup.py install
+```
+
 # Authentication
 ```py
 import sys
