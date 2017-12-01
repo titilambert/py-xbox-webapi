@@ -245,7 +245,7 @@ class TwoFactorAuthentication(object):
             requests.Response: Instance of :class:`requests.Response`. Access / Refresh Tokens are contained in the
             Location-Header!
         """
-        auth_variants = server_data.get('H', [])
+        auth_variants = server_data.get('D', [])
         if not len(auth_variants):
             log.error('No TwoFactor Auth Methods available?! That\'s weird!')
             return
